@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+
+    --primary: #add4d3;
+    --secondary: #ffad64;
+    --terciary: #e9e2da;
+    --dark: #333237;
+    --shadow: 0 5px 10px rgba(154, 160, 185, 0.05);
+
+}
+
+body {
+    background: var(--terciary);
+    color: var(--dark);
+}
+
+/* CONTAINERS */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    gap: 2rem;
+}
+
+.container--add-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+
+/* BOTÕES E INPUTS \ BUTTONS AND INPUTS */
+
+#add-item {
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    padding: 1rem;
+    width: 20rem;
+    border-radius: 1rem;
+}
+
+#btn-add-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    border-radius: 50%;
+
+    background: var(--secondary);
+    border: 1px solid #fb8351;
+    box-shadow: var(--shadow);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#btn-add-item:hover {
+    transform: scale(1.1);
+}
+
+#btn-tarefa-feita {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+    width: 50px;
+}
+
+#btn-tarefa-feita:hover {
+    background-color: var(--secondary);
+}
+
+#list-items li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
