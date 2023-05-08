@@ -11,7 +11,7 @@
 
     --primary: #add4d3;
     --secondary: #ffad64;
-    --terciary: #e9e2da;
+    --terciary: #e6e8e3;
     --dark: #333237;
     --shadow: 0 5px 10px rgba(154, 160, 185, 0.05);
 
@@ -32,8 +32,6 @@ body {
     padding-top: 3rem;
 }
 
-
-
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -53,7 +51,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
 }
 
 
