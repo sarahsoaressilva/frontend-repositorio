@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSV to JSON </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <section class="container flex">
+
+        <div class="wrapper flex">
+            <h1>CSV to JSON</h1>
+            <p> 
+                Para converter, 
+                faça upload do seu arquivo Excel (não esqueça de salvar como CSV). 
+            </p>
+            <label for="file"> Faça upload aqui abaixo: </label>
+            <input type="file" name="file" id="entrada-arquivo" accept=".csv"
+            title="Clique aqui para fazer upload do seu arquivo.">
+
+        </div>    
+
+        <div class="wrapper flex">
+            <h2> Resultado da conversão: </h2>
+            <textarea rows="10" cols="50" id="preview-resultado"></textarea>
+            <button title="Clique aqui para fazer download do seu arquivo JSON." id="btn-download"> 
+                Download do JSON
+            </button>
+        </div>
+
+    </section>
+    
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
