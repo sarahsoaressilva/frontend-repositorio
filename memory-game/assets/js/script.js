@@ -145,21 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-    /* TIMER */
-
-    let segundos = 0, minutos = 0;
-
-    const geradorTimer = () => {
-        segundos  += 1;
-        if (segundos >= 60) minutos += 1, segundos = 0;
-
-        /* caso os valores forem < 10, adiciona o char 0 */
-        let valorSegundos = segundos < 10 ? `0${segundos}` : segundos;
-        let valorMinutos = minutos < 10 ? `0${minutos}` : minutos;
-
-        timeValue.innerHTML = `<span>Tempo:</span> ${valorMinutos}:${valorSegundos}`;
-    }
-
     criaTabuleiro();
 
 

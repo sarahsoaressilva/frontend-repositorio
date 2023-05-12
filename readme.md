@@ -18,4 +18,7 @@ Cada mini projeto aqui foi construído para **aprimorar minhas habilidades de de
 ## Sumário
 
 1. **relogio-js:**  relógio online com aparência de uma janela de MacOS.
-2. **to-do-list**: lista de tarefas com acesso a uma playlist do Spotify.
+2. **to-do-list:** lista de tarefas com acesso a uma playlist do Spotify.
+3. **csv-to-json:** conversor de arquivo .csv para json.
+4. **memory-game:** jogo da memória com imagens engraçadas de gatos.
+
