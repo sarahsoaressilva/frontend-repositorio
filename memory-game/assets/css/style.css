@@ -21,12 +21,38 @@ input, textarea, button, select {
 
 /* CSS VARIABLES  */
 
+:root {
+    --happy-orange: #f4c531;
+
+}
+
+
+body {
+    background-color: var(--happy-orange);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+body h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
 .grid {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 300px;
     height: 400px;
+    gap: 1rem;
+}
+
+.grid img {
+    max-width: 200px;
 }

@@ -26,19 +26,38 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: 'gato-com-vinho',
             img: 'images/gatocomvinho.jpg'
+        }, 
+        {
+            name: 'gato-com-oculos',
+            img: 'images/catcomoculos.jpg'
+        },
+        {
+            name: 'gato-confuso',
+            img: 'images/gato.jpg'
+        },
+        {
+            name: 'gato-com-terno',
+            img: 'images/gatocomsmoking.jpg'
+        },
+        {
+            name: 'gato-gritando',
+            img: 'images/gatogritando.jpg'
+        },
+        {
+            name: 'gato-mordendo-pe',
+            img: 'images/gatomordendope.jpg'
+        },
+        {
+            name: 'gato-com-vinho',
+            img: 'images/gatocomvinho.jpg'
         }
     ];
 
     /* Randomiza as cartas */
     cardsArray.sort(() => 0.5 - Math.random());
 
-    var cardsChosen = [];
-    var cardsChosenId = [];
-    var cardsAchadas = [];
-
-    var pontuacao = 0;
-    
-    
+    let cardsChosen = [], cardsChosenId = [], cardsGanhas = [];
+       
     const grid = document.querySelector('.grid');
     const pontuacaoDisplay = document.querySelector('#pontuacao');
     const aviso = document.querySelector('#aviso');
@@ -57,7 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             /* adiciona na div o card */
             grid.appendChild(card); 
-        }
+        };
+
+        pontuacaoDisplay.innerHTML = 0;
+
     };
 
 
@@ -68,13 +90,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
 
-        if (cardsChosen[0] === cardsChosen[1]) {
-            alert('Parabéns! Você achou um par! ');
-            cards[optionOneId].removeChild();
-            cards[optionTwoId].removeChild();
-            cardsAchadas.push(cardsChosen);
-        } else {
-            alert('Que pena! O par está incorreto. Tente novamente. ');
+        /* Caso o player clique na mesma imagem */
+        if( optionOneId === optionTwoId ) {
+            alert('Você clicou na mesma imagem!'); 
+            cards[optionOneId].setAttribute('src', 'images/blank.png');
+            cards[optionTwoId].setAttribute('src', 'images/blank.png');
+        }
+        /* Caso o player achar o par da carta */
+        else if (cardsChosen[0] === cardsChosen[1]) {
+            
+            let audio = new Audio('sounds/SuperMario64CoinSound.mp3');
+            audio.play();
+
+            cards[optionOneId].removeEventListener('click', flipCard);
+            cards[optionTwoId].removeEventListener('click', flipCard);
+            cardsGanhas.push(cardsChosen);
+        } 
+        /* Caso o par esteja errado */
+        else {
             cards[optionOneId].setAttribute('src', 'images/blank.png');
             cards[optionTwoId].setAttribute('src', 'images/blank.png');
         };
@@ -82,9 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
         cardsChosen = [];
         cardsChosenId = [];
 
-        aviso.textContent = cardsAchadas.length;
-        if (cardsAchadas.length === cardsArray.length / 2) {
-            aviso.textContent = 'Parabéns! Você achou todos os pares! ';
+        pontuacaoDisplay.textContent = cardsGanhas.length;
+        
+        if (cardsGanhas.length === cardsArray.length/2 ) {
+            aviso.innerHTML = 'Parabéns! Você achou todos os pares! ';
         };
     };
 
@@ -110,6 +144,21 @@ document.addEventListener("DOMContentLoaded", () => {
         } 
 
     };
+
+    /* TIMER */
+
+    let segundos = 0, minutos = 0;
+
+    const geradorTimer = () => {
+        segundos  += 1;
+        if (segundos >= 60) minutos += 1, segundos = 0;
+
+        /* caso os valores forem < 10, adiciona o char 0 */
+        let valorSegundos = segundos < 10 ? `0${segundos}` : segundos;
+        let valorMinutos = minutos < 10 ? `0${minutos}` : minutos;
+
+        timeValue.innerHTML = `<span>Tempo:</span> ${valorMinutos}:${valorSegundos}`;
+    }
 
     criaTabuleiro();
 
