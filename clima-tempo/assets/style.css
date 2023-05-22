@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+/* RESET CSS */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-family: 'Poppins', sans-serif;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+
+/* TIPOGRAFIA */
+
+h1 {
+    font-size: 2rem;
+}
+
+/* CONTAINERS */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.information__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.two-columns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.searchbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 100vh;
+}
+
+.not-found {
+    display: none;
+}
+
+.clima i {
+    font-size: 10rem;
+    color: #001f1b;
+}
+
+/* INPUTS E BOTÕES */
+
+.searchbox__input {
+    padding: 1rem;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 1rem;
+    border: 1px solid #e0d6ee;
+}
+
+.button--default {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #92f8fe;
+    border-style: none;
+    cursor: pointer;
+}
+
+
+.information__container i {
+    font-size: 2rem;
+    color: #001f1b;
+}

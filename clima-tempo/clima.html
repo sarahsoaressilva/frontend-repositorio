@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clima & Tempo | Sarah Soares </title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <main>
+
+        <div class="container">
+            
+            <h1> Consulte o clima da sua cidade. </h1>
+
+            <div class="searchbox">
+                <input type="text" class="searchbox__input" id="location" placeholder="Digite o nome da cidade" />
+                <button class="button--default" id="confirmaPesquisa" title="Clique para pesquisar o tempo na localidade digitada.">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+
+            <div class="two-columns">
+
+                <div class="not-found">
+                    <img src="assets/not-found-error.jpg" style="max-width: 500px;" alt="Erro 404" />
+                    <p> Oops! Não encontramos a localidade pesquisada.  </p>
+                </div>
+
+                <div class="clima">
+                    <i class="bi bi-cloud-sun"></i>
+                </div>
+
+                <div class="information">
+
+                    <div class="information__container">
+                        <i class="bi bi-cloud-sun"></i>
+                        <span id="temperatura"></span>
+                        <h2> Temperatura </h2>
+                    </div>
+
+                    <div class="information__container">
+                        <i class="bi bi-water"></i>
+                        <span id="umidade"></span>
+                        <h2> Umidade </h2>
+                    </div>
+
+                    <div class="information__container">
+                        <i class="bi bi-wind"></i>
+                        <span id="vento"></span>
+                        <h2> Velocidade do Vento </h2>
+                    </div>
+
+                </div>
+
+            </div> <!-- FIM TWO COLUMNS -->
+
+        </div>
+
+    </main>
+
+
+    
+    <script src="assets/script.js"></script>
+</body>
+</html>
