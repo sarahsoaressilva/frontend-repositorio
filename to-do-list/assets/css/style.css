@@ -25,16 +25,17 @@ body {
 /* CONTAINERS */
 
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    place-items: flex-start center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     gap: 2rem;
-    padding-top: 3rem;
+    padding: 3rem;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     max-width: 800px;
     gap: 2rem;
 }
@@ -52,6 +53,21 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
+
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    };
+
+    
+}
+
+
+
 
 
 /* BOTÕES E INPUTS \ BUTTONS AND INPUTS */
