@@ -3,8 +3,6 @@
 **Seja bem-vindx ao repositório de projetos front-end!**
 
 Cada mini projeto aqui foi construído para **aprimorar minhas habilidades de desenvolvimento front-end**.
-
- Os projetos estão divididos dentro de pastas. Cada pasta contém um arquivo readme explicando sobre o projeto.
  
  **Fique a vontade para explorar!**
 
