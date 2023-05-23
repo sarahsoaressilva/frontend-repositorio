@@ -42,13 +42,10 @@
                 </svg>
             </button> 
         </li>`;
-    }
+    };
 
  }
-
  function tarefaFeita( data ) {
-
-    console.log( data );
 
     /* procura o index do elemento que tenha o nome === o parametro  */
     let index = values.findIndex( item => item.name === data );

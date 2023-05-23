@@ -54,6 +54,21 @@ body {
     gap: 2rem;
 }
 
+.container__counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-height: 100px;
+    padding: 1rem;
+    gap: 0.5rem;
+    background-color: #ffad64;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+    
+}
+
 
 @media screen and (max-width: 600px) {
     .wrapper {
