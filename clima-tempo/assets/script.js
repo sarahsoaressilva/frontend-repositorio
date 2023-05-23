@@ -29,31 +29,29 @@ let consultaAPI = async () => {
         temperatura: resData.main.temp,
         umidade: resData.main.humidity,
         vento: resData.wind.speed
-    }
+    };
     
     return data;
 };
 
 
-let mostrarClima = (cidade) => {
+let mostrarClima = async (cidade) => {
     
-    let data = consultaAPI(cidade);  
+    let data = await consultaAPI(cidade);  
     
-    data.then((data) => {
-        TEMPERATURA.innerHTML = `${data.temperatura}°C`;
-        UMIDADE.innerHTML = `${data.umidade}%`;
-        VENTO.innerHTML = `${data.vento}m/s`;
-    });
+    TEMPERATURA.innerHTML = `${data.temperatura}°C`;
+    UMIDADE.innerHTML = `${data.umidade}%`;
+    VENTO.innerHTML = `${data.vento}m/s`;
 
 };
 
 
 /* Eventos */
-BTN_CONFIRMA.addEventListener('click', (e) => {
+BTN_CONFIRMA.addEventListener('click', (event) => {
     
     /* pega a localização digitada na search bar */
     let localizacao = INPUT_LOCALIZACAO.value;
-    e.preventDefault();
+    event.preventDefault();
     mostrarClima(localizacao);
 
 })
