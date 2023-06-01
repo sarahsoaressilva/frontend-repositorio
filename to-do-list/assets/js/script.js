@@ -1,7 +1,19 @@
  const localStorageName = 'to-do-list-items';
+ const localStorageCounter = 'contador';
 
 /* se não achar nada, retorna uma string de array vazia */
+/* se não, transforma o localStorage em JSON */
  let values = JSON.parse( localStorage.getItem("to-do-list-items") || "[]" ); 
+
+ /* linka o contador de tarefas completas */
+ const contadorPlacar = document.getElementById('counter');
+ 
+/* se não achar nada, retorna 0 */
+/* se não, transforma o localStorage em JSON */
+ let contagem =  JSON.parse( localStorage.getItem("contador") || 0 ); 
+
+ /* Pega valor de contagem */
+ contadorPlacar.innerHTML = localStorage.getItem("contador");
  
  function novaTarefa() {
 
@@ -23,7 +35,8 @@
     /* transforma o nome de objeto JSON para string e exibe a lista */
     localStorage.setItem( localStorageName, JSON.stringify(values) );
     mostrarLista();
- }  
+
+ };
 
  function mostrarLista() {
 
@@ -44,7 +57,8 @@
         </li>`;
     };
 
- }
+ };
+
  function tarefaFeita( data ) {
 
     /* procura o index do elemento que tenha o nome === o parametro  */
@@ -57,7 +71,12 @@
     localStorage.setItem( localStorageName, JSON.stringify(values) );
     mostrarLista();
 
- }
+    /* atualiza o contador de tarefas */
+    contagem += 1;
+    localStorage.setItem( localStorageCounter, JSON.stringify(contagem) );
+    contadorPlacar.innerHTML = localStorage.getItem("contador");
+
+ };
 
  /* Verifica se a tarefa já existe */
  function verificaTarefa() {
@@ -66,7 +85,7 @@
     let existe =  values.find(x => x.name.toLowerCase() === nomeDaTarefa.toLowerCase()); 
     return !existe ? false: true; 
 
- }
+ };
 
 
  mostrarLista();
