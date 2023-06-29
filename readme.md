@@ -16,7 +16,6 @@ Cada mini projeto aqui foi construído para **aprimorar minhas habilidades de de
 3. **csv-to-json:** conversor de arquivo .csv para json.
 4. **memory-game:** jogo da memória com imagens engraçadas de gatos.
 5. **clima-tempo:** consulta de tempo, uso da Open Weather API.
-6. **cafezinho**: página inicial de um bate papo / cafezinho online com outras pessoas.
 
 
 ## Relógio digital com aparência de janela MacOS
