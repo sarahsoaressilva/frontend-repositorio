@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;600&display=swap');
+
+/*  --------------
+
+RESET
+
+-------------- */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+:root {
+    
+    /* Primary */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Neutral */
+
+    --very-dark-blue-bg: hsl(217, 54%, 11%); /* bg */
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--very-dark-blue-bg);
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+
+/*  --------------
+
+UTILITY CLASSES
+
+-------------- */
+
+.--white {
+    color: var(--white);
+}
+
+.--soft-blue {
+    color: var(--soft-blue);
+}
+
+.--limit-text {
+    max-width: 300px;
+}
+
+/*  --------------
+
+CONTAINERS
+
+-------------- */
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: var(--very-dark-blue-card);
+    border-radius: 1rem;
+
+    gap: 1.5rem;
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card__creator {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem; 
+    border-top: 1px solid var(--very-dark-blue-line);
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__info--icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card__wrapper {
+    position: relative;
+}
+
+/*  --------------
+
+IMAGES
+
+-------------- */
+
+
+.card__img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.card__avatar {
+    max-width: 30px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    position: absolute;
+
+    width: 300px;
+    height: 100%;
+    
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.overlay:hover > img {
+    opacity: 1!important;
+}
+
+.overlay:hover {
+    opacity: 0.5;
+    background: var(--cyan);
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*  --------------
+
+TEXTS
+
+-------------- */
+
+.card__title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card__description {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.accent {
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+.accent--hover:hover {
+    transition: all 0.3s ease-in-out;
+    color: var(--cyan);
+    cursor: pointer;
+}
